@@ -1,0 +1,37 @@
+/*
+.wy-nav-content {
+max-width: 1200px !important;
+}
+*/
+
+/* Make the web page wider */
+.wy-nav-content {
+  /* !important prevents the common CSS stylesheets from
+  overriding this as on RTD they are loaded after this stylesheet */
+  max-width: 60% !important;
+}
+
+/* Make the tables word wrap */
+.wy-table-responsive table td,
+.wy-table-responsive table th {
+  /* !important prevents the common CSS stylesheets from
+  overriding this as on RTD they are loaded after this stylesheet */
+  white-space: normal !important;
+}
+
+.wy-table-responsive {
+  overflow: visible !important;
+}
+
+/*
+.framed-black img { border: 2px solid black;}
+
+.framed-blue img { border: 2px solid blue;}
+
+.framed-grey img { border: 2px solid grey;}
+
+.dropshadow img { 
+    box-shadow: 5px 5px 5px #999;
+    margin-bottom: 10px;
+}
+*/

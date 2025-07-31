@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clide module &mdash; CliDEsc helper functions 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/my_theme.css?v=09ef5876" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="clidesc module" href="clidesc.html" />
+    <link rel="prev" title="utils module" href="utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CliDEsc helper functions
+              <img src="_static/Earth_Sciences_V_A_White_Alpha.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">clide module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#stations">stations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.stations"><code class="docutils literal notranslate"><span class="pre">stations()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#getstationsbycountry">getStationsByCountry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.getStationsByCountry"><code class="docutils literal notranslate"><span class="pre">getStationsByCountry()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stationscomprehensive">stationsComprehensive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.stationsComprehensive"><code class="docutils literal notranslate"><span class="pre">stationsComprehensive()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#minstationlist">10minStationList</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.TenMinStationList"><code class="docutils literal notranslate"><span class="pre">TenMinStationList()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#obs">Obs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.Obs"><code class="docutils literal notranslate"><span class="pre">Obs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#obsdaily">ObsDaily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.ObsDaily"><code class="docutils literal notranslate"><span class="pre">ObsDaily()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#obssubdaily">ObsSubDaily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.ObsSubDaily"><code class="docutils literal notranslate"><span class="pre">ObsSubDaily()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#obsaws">ObsAws</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.ObsAws"><code class="docutils literal notranslate"><span class="pre">ObsAws()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rain24h">rain24h</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.rain24h"><code class="docutils literal notranslate"><span class="pre">rain24h()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lastxdaysrain">lastXDaysRain</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.lastXDaysRain"><code class="docutils literal notranslate"><span class="pre">lastXDaysRain()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scopic">scopic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clidesc.clide.scopic"><code class="docutils literal notranslate"><span class="pre">scopic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clidesc.html">clidesc module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CliDEsc helper functions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">clide module</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-clidesc.clide">
+<span id="clide-module"></span><h1>clide module<a class="headerlink" href="#module-clidesc.clide" title="Link to this heading"></a></h1>
+<p>clide.py provides helper functions to support the extraction of data from a CliDE database.</p>
+<dl class="simple">
+<dt>Author:</dt><dd><p>James Sturman, NIWA</p>
+</dd>
+<dt>Date:</dt><dd><p>December 2022</p>
+</dd>
+<dt>Usage:</dt><dd><p>import this module into your Python script and call the functions as needed.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When returning a table (e.g., the result of a SQL query to the clide database), this table is a Pandas DataFrame object,
+which is similar to (but more efficient than) an R dataframe, and makes slicing, column or row selection,
+resampling, etc. extremely convenient. When time-series are returned, the index of the dataframe (i.e., the ‘rows’
+identifier) is a Pandas DatetimeIndex object resulting from the conversion of the lsd field to a Python datetime
+object and setting it as the index for the DataFrame. The name of the index is invariably ‘timestamp’.</p>
+</div>
+<section id="stations">
+<h2>stations<a class="headerlink" href="#stations" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.stations">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">stations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.3.1)"><span class="pre">DataFrame</span></a></span></span><a class="headerlink" href="#clidesc.clide.stations" title="Link to this definition"></a></dt>
+<dd><p>Return all station metadata for a given station number, list of station numbers, or all stations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p></li>
+<li><p><strong>stations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – A station number or list of station numbers (e.g., [XXXXX, YYYYY, ZZZZZ] or ‘XXXXX, YYYYY, ZZZZZ’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing the station information, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getstationsbycountry">
+<h2>getStationsByCountry<a class="headerlink" href="#getstationsbycountry" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.getStationsByCountry">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">getStationsByCountry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.3.1)"><span class="pre">DataFrame</span></a></span></span><a class="headerlink" href="#clidesc.clide.getStationsByCountry" title="Link to this definition"></a></dt>
+<dd><p>Execute a SQL query on the CliDE database station table to extract station information for a given country code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p></li>
+<li><p><strong>country</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The two-letter country identifier code (e.g., ‘WS’ for Samoa, ‘FJ’ for Fiji).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing station information for the country, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="stationscomprehensive">
+<h2>stationsComprehensive<a class="headerlink" href="#stationscomprehensive" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.stationsComprehensive">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">stationsComprehensive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tablename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'stations'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minObs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_and</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clidesc.clide.stationsComprehensive" title="Link to this definition"></a></dt>
+<dd><p>Get all the station details for a station number or list of station numbers, with optional filters.</p>
+<p>This function is an extension of <cite>clide.stations</cite> and accepts additional parameters to filter the
+returned station information (e.g., by the amount of data in observation tables such as ‘obs_daily’,
+‘obs_subdaily’, or by date range).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p></li>
+<li><p><strong>stations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>, </em><em>optional</em>) – The station list (e.g., [XXXXX, YYYYY]). A single station number should also be provided as a list (e.g., [ZZZZZ]). Unlike <cite>clide.stations</cite>, this method only accepts Python lists and not strings.</p></li>
+<li><p><strong>tablename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – Name of a single observation table (e.g., ‘obs_daily’ or ‘obs_subdaily’).</p></li>
+<li><p><strong>channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>, </em><em>optional</em>) – The variable channels in the table. Only used if tablename is not set to ‘stations’.</p></li>
+<li><p><strong>minObs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>, </em><em>optional</em>) – Minimum number of observations (default 0). Returns stations with at least this many observations for the specified variable channels.</p></li>
+<li><p><strong>_and</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, minObs is tested against all elements (SQL AND operator); all variables must have more observations than minObs. If False, any variable can have more observations than minObs (SQL OR operator). Default is False.</p></li>
+<li><p><strong>from_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – ISO 8601 standard start date string (e.g., ‘2014-01-01’).</p></li>
+<li><p><strong>to_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – ISO 8601 standard end date string (e.g., ‘2014-01-01’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing the station information, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="minstationlist">
+<h2>10minStationList<a class="headerlink" href="#minstationlist" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.TenMinStationList">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">TenMinStationList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clidesc.clide.TenMinStationList" title="Link to this definition"></a></dt>
+<dd><p>Return a DataFrame of stations recording 10-minute observations from the obs_aws table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame of stations recording 10-minute observations, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="obs">
+<h2>Obs<a class="headerlink" href="#obs" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.Obs">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">Obs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clidesc_conn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clidesc.clide.Obs" title="Link to this definition"></a></dt>
+<dd><p>Generic function for executing a SQL query on the CliDE database to extract observation data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p></li>
+<li><p><strong>table</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – CliDE database table name.</p></li>
+<li><p><strong>stations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The station number or list (e.g., [XXXXX, YYYYY, ZZZZZ] or “XXXXX, YYYYY, ZZZZZ”).</p></li>
+<li><p><strong>from_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard start date string (e.g., ‘2021-09-01’).</p></li>
+<li><p><strong>to_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard end date string (e.g., ‘2021-09-30’).</p></li>
+<li><p><strong>channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – Variable channels in the table (e.g., [‘rain_24h’, …] or “rain_24h, …”).</p></li>
+<li><p><strong>chained</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, include station chains.</p></li>
+<li><p><strong>clidesc_conn</strong> – A SQLAlchemy database connection object for the clidesc DB.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing climate observation data, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="obsdaily">
+<h2>ObsDaily<a class="headerlink" href="#obsdaily" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.ObsDaily">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">ObsDaily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clidesc.clide.ObsDaily" title="Link to this definition"></a></dt>
+<dd><p>Return the daily observations table for the requested stations, channels, and date range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p></li>
+<li><p><strong>stations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The station number or list (e.g., [XXXXX, YYYYY, ZZZZZ] or “XXXXX, YYYYY, ZZZZZ”).</p></li>
+<li><p><strong>from_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard start date string (e.g., ‘2021-09-01’).</p></li>
+<li><p><strong>to_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard end date string (e.g., ‘2021-09-30’).</p></li>
+<li><p><strong>channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – Variable channels in the table (e.g., [‘rain_24h’, …] or “rain_24h, …”).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing daily climate observation data, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="obssubdaily">
+<h2>ObsSubDaily<a class="headerlink" href="#obssubdaily" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.ObsSubDaily">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">ObsSubDaily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clidesc.clide.ObsSubDaily" title="Link to this definition"></a></dt>
+<dd><p>Return the sub-daily observations table for the requested stations, channels, and date range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p></li>
+<li><p><strong>channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Variable channels in the table (e.g., [‘rain_3h’, …] or “rain_3h, …”).</p></li>
+<li><p><strong>stations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The station number or list (e.g., [XXXXX, YYYYY, ZZZZZ] or “XXXXX, YYYYY, ZZZZZ”).</p></li>
+<li><p><strong>from_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard start date string (e.g., ‘2021-09-01’).</p></li>
+<li><p><strong>to_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard end date string (e.g., ‘2021-09-30’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing sub-daily climate observation data, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="obsaws">
+<h2>ObsAws<a class="headerlink" href="#obsaws" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.ObsAws">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">ObsAws</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AVG'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clidesc.clide.ObsAws" title="Link to this definition"></a></dt>
+<dd><p>Execute a SQL query on the CliDE database obs_aws table to extract AWS observation data.
+Supports raw data or aggregated data (daily, monthly, yearly).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p></li>
+<li><p><strong>stations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The station number or list.</p></li>
+<li><p><strong>from_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard start date string (e.g., ‘yyyy-mm-dd’).</p></li>
+<li><p><strong>to_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard end date string (e.g., ‘yyyy-mm-dd’).</p></li>
+<li><p><strong>channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – Variable channels to include in the query.</p></li>
+<li><p><strong>aggregation</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – Aggregation level (‘daily’, ‘monthly’, ‘yearly’). If None, returns raw data.</p></li>
+<li><p><strong>statistic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – Aggregation function to apply (e.g., ‘AVG’, ‘SUM’, ‘MAX’, ‘MIN’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing AWS observation data, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="rain24h">
+<h2>rain24h<a class="headerlink" href="#rain24h" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.rain24h">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">rain24h</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clidesc.clide.rain24h" title="Link to this definition"></a></dt>
+<dd><p>Read the rain_24h channel from the obs_daily table for the given stations and date range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p></li>
+<li><p><strong>stations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The station number or list (e.g., [XXXXX, YYYYY, ZZZZZ] or “XXXXX, YYYYY, ZZZZZ”).</p></li>
+<li><p><strong>from_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard start date string (e.g., ‘2021-09-01’).</p></li>
+<li><p><strong>to_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard end date string (e.g., ‘2021-09-30’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing the rainfall data, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="lastxdaysrain">
+<h2>lastXDaysRain<a class="headerlink" href="#lastxdaysrain" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.lastXDaysRain">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">lastXDaysRain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clidesc.clide.lastXDaysRain" title="Link to this definition"></a></dt>
+<dd><p>Return the sum of rainfall for the requested stations and date range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – A SQLAlchemy database connection object as returned by utils.db_open().</p></li>
+<li><p><strong>stations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – A station number or list (e.g., [XXXXX, YYYYY, ZZZZZ] or ‘XXXXX, YYYYY, ZZZZZ’).</p></li>
+<li><p><strong>from_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard start date string (e.g., ‘2014-01-01’).</p></li>
+<li><p><strong>to_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – ISO 8601 standard end date string (e.g., ‘2014-05-01’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing the rainfall data, or None if query fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="scopic">
+<h2>scopic<a class="headerlink" href="#scopic" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clidesc.clide.scopic">
+<span class="sig-prename descclassname"><span class="pre">clidesc.clide.</span></span><span class="sig-name descname"><span class="pre">scopic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#clidesc.clide.scopic" title="Link to this definition"></a></dt>
+<dd><p>Execute a SQL query on the CliDE database to retrieve rainfall data for a specified station and date range.</p>
+<p>This function fetches daily rainfall data for a given station between the specified <cite>from_date</cite> and <cite>to_date</cite>.
+The query aggregates the data, calculates missing data counts, and formats the results.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is a simplified version of the original <cite>scopic</cite> function. It only retrieves daily rainfall data.
+There does not appear to be any data in the obs_monthly table in Samoa.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – Database connection object.</p></li>
+<li><p><strong>station</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Station identifier.</p></li>
+<li><p><strong>from_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Start date in ‘YYYY-MM-DD’ format.</p></li>
+<li><p><strong>to_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – End date in ‘YYYY-MM-DD’ format.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing the query results, or None if an exception occurs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span> <span class="o">=</span> <span class="n">create_connection</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">scopic</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;STATION123&#39;</span><span class="p">,</span> <span class="s1">&#39;2022-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2022-12-31&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="utils.html" class="btn btn-neutral float-left" title="utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="clidesc.html" class="btn btn-neutral float-right" title="clidesc module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, James Sturman.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
