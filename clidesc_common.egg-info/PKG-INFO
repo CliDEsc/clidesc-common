@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: clidesc-common
+Version: 0.1.0
+Summary: A package for climate data extraction and analysis.
+Author: James Sturman
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: sqlalchemy
+Requires-Dist: Pillow
+Requires-Dist: numpy
+Dynamic: license-file

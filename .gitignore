@@ -1,0 +1,25 @@
+
+# ignore document build directory
+**/build
+# Sphinx documentation build directory
+docs/_build/
+docs/build/
+# build/
+# Sphinx cache and doctrees
+docs/.doctrees/
+docs/.buildinfo
+# Sphinx output formats
+docs/*.html
+docs/*.tex
+docs/*.epub
+docs/*.pdf
+docs/*.doctree
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.venv/
+venv/

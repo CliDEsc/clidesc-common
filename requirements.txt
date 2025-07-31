@@ -1,0 +1,10 @@
+psycopg2-binary
+pandas
+sqlalchemy
+matplotlib
+numpy
+Pillow
+sphinx
+sphinxcontrib-napoleon
+myst-parser
+sphinx_rtd_theme

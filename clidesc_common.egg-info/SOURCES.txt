@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+clidesc/__init__.py
+clidesc/clide.py
+clidesc/clidesc.py
+clidesc/utils.py
+clidesc_common.egg-info/PKG-INFO
+clidesc_common.egg-info/SOURCES.txt
+clidesc_common.egg-info/dependency_links.txt
+clidesc_common.egg-info/requires.txt
+clidesc_common.egg-info/top_level.txt

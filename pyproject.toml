@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clidesc-common"
+version = "0.1.0"
+description = "A package for climate data extraction and analysis."
+authors = [{name = "James Sturman"}]
+dependencies = [
+    "pandas",
+    "sqlalchemy",
+    "Pillow",  # Pillow for image processing
+    "numpy",
+]
